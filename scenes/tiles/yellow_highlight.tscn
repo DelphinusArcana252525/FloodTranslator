@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvxwpkvyxhb28"]
+
+[ext_resource type="PackedScene" uid="uid://xlcn1o2386tt" path="res://scenes/tiles/HighlightTile.tscn" id="1_p4mol"]
+
+[node name="YellowHighlight" instance=ExtResource("1_p4mol")]
+
+[node name="ColorRect" parent="." index="0"]
+color = Color(1, 1, 0, 0.392157)

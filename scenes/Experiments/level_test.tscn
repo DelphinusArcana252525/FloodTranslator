@@ -1,0 +1,62 @@
+[gd_scene load_steps=19 format=4 uid="uid://vre28j1asse7"]
+
+[ext_resource type="PackedScene" uid="uid://frnipt71201q" path="res://scenes/tiles/wall_tile.tscn" id="1_eault"]
+[ext_resource type="Script" path="res://scenes/Experiments/level_test.gd" id="1_i3kru"]
+[ext_resource type="PackedScene" uid="uid://i01q5eskhjo7" path="res://scenes/tiles/inaccessible_floor.tscn" id="2_swn7n"]
+[ext_resource type="PackedScene" uid="uid://dtwrjciw4l6uq" path="res://scenes/tiles/OriginTile.tscn" id="3_moch7"]
+[ext_resource type="PackedScene" uid="uid://bt2tfvuloy25h" path="res://scenes/tiles/accessible_floor.tscn" id="3_q25gh"]
+[ext_resource type="Script" path="res://scenes/Experiments/world_test.gd" id="5_heb0d"]
+[ext_resource type="PackedScene" uid="uid://dfy1mcdhn6ihe" path="res://scenes/tiles/red_tile.tscn" id="6_kx26v"]
+[ext_resource type="PackedScene" uid="uid://b77av0tltad0m" path="res://scenes/tiles/red_highlight.tscn" id="6_yr2mq"]
+[ext_resource type="PackedScene" uid="uid://c1njvaxqiag2e" path="res://scenes/tiles/yellow_t_ile.tscn" id="7_ino6o"]
+[ext_resource type="PackedScene" uid="uid://dvxwpkvyxhb28" path="res://scenes/tiles/yellow_highlight.tscn" id="7_piv76"]
+[ext_resource type="PackedScene" uid="uid://b4mjkgwmlfn7s" path="res://scenes/tiles/blue_highlight.tscn" id="8_iik24"]
+[ext_resource type="PackedScene" uid="uid://btb756p5gm6or" path="res://scenes/tiles/blue_tile.tscn" id="8_my528"]
+[ext_resource type="Script" path="res://scenes/Experiments/highlights.gd" id="9_rfqvo"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_hkbfj"]
+resource_name = "TileSet1"
+scenes/1/scene = ExtResource("3_q25gh")
+scenes/2/scene = ExtResource("2_swn7n")
+scenes/3/scene = ExtResource("1_eault")
+scenes/4/scene = ExtResource("3_moch7")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_2b8lk"]
+resource_name = "ColorTiles"
+scenes/1/scene = ExtResource("6_kx26v")
+scenes/2/scene = ExtResource("7_ino6o")
+scenes/3/scene = ExtResource("8_my528")
+
+[sub_resource type="TileSet" id="TileSet_6jkpc"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetScenesCollectionSource_hkbfj")
+sources/1 = SubResource("TileSetScenesCollectionSource_2b8lk")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_3uwt2"]
+resource_name = "Highlights"
+scenes/1/scene = ExtResource("6_yr2mq")
+scenes/2/scene = ExtResource("7_piv76")
+scenes/3/scene = ExtResource("8_iik24")
+
+[sub_resource type="TileSet" id="TileSet_px2os"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetScenesCollectionSource_3uwt2")
+
+[node name="LevelTest" type="Node2D"]
+script = ExtResource("1_i3kru")
+
+[node name="World" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAwABAAAAAAAAAAAAAwACAAAAAAAAAAAAAwADAAAAAAAAAAAAAwAEAAAAAAAAAAAAAwAAAAEAAAAAAAAAAwAAAAIAAAAAAAAAAwAAAAMAAAAAAAAAAwAAAAQAAAAAAAAAAwAAAAUAAAAAAAAAAwAAAAYAAAAAAAAAAwAAAAcAAAAAAAAAAwAGAAAAAAAAAAAAAwAGAAEAAAAAAAAAAwAGAAIAAAAAAAAAAwAGAAMAAAAAAAAAAgAGAAQAAAAAAAAAAwAGAAUAAAAAAAAAAwABAAUAAAAAAAAAAwACAAUAAAAAAAAAAwADAAUAAAAAAAAAAwAEAAUAAAAAAAAAAwAFAAUAAAAAAAAAAwAFAAAAAAAAAAAAAwAGAAYAAAAAAAAAAwAGAAcAAAAAAAAAAwAGAAgAAAAAAAAAAwAGAAkAAAAAAAAAAwAGAAoAAAAAAAAAAgAGAAsAAAAAAAAAAwAAAAgAAAAAAAAAAwAAAAkAAAAAAAAAAwAAAAoAAAAAAAAAAwAAAAsAAAAAAAAAAwABAAsAAAAAAAAAAwACAAsAAAAAAAAAAwADAAsAAAAAAAAAAwAEAAsAAAAAAAAAAwAFAAsAAAAAAAAAAwADAAQAAAAAAAAAAwADAAYAAAAAAAAAAwADAAcAAAAAAAAAAwADAAgAAAAAAAAAAwADAAkAAAAAAAAAAwACAAIAAAAAAAAAAQACAAEAAAAAAAAAAgABAAEAAAAAAAAAAgABAAIAAAAAAAAAAgABAAMAAAAAAAAAAgABAAQAAAAAAAAAAgACAAQAAAAAAAAAAgACAAMAAAAAAAAAAgADAAMAAAAAAAAAAgADAAIAAAAAAAAAAgADAAEAAAAAAAAAAgAEAAEAAAAAAAAAAgAEAAIAAAAAAAAAAgAEAAMAAAAAAAAAAgAEAAQAAAAAAAAAAgAFAAQAAAAAAAAAAgAFAAMAAAAAAAAAAgAFAAIAAAAAAAAAAgAFAAEAAAAAAAAAAgABAAcAAAAAAAAAAgABAAYAAAAAAAAAAgACAAYAAAAAAAAAAgACAAcAAAAAAAAAAgACAAgAAAAAAAAAAgABAAgAAAAAAAAAAgABAAkAAAAAAAAAAgABAAoAAAAAAAAAAgACAAoAAAAAAAAAAgACAAkAAAAAAAAAAgADAAoAAAAAAAAAAgAEAAoAAAAAAAAAAgAEAAkAAAAAAAAAAgAEAAgAAAAAAAAAAgAEAAcAAAAAAAAAAgAEAAYAAAAAAAAAAgAFAAYAAAAAAAAAAgAFAAcAAAAAAAAAAgAFAAgAAAAAAAAAAgAFAAkAAAAAAAAAAgAFAAoAAAAAAAAAAgAHAAIAAAAAAAAAAgAIAAIAAAAAAAAAAgAJAAIAAAAAAAAAAgAKAAIAAAAAAAAAAgALAAIAAAAAAAAAAgAMAAIAAAAAAAAAAgANAAIAAAAAAAAAAgAOAAIAAAAAAAAAAwAKAAcAAAAAAAAAAgAKAAYAAAAAAAAAAgAKAAUAAAAAAAAAAgAKAAQAAAAAAAAAAgAKAAMAAAAAAAAAAgAJAAMAAAAAAAAAAgAIAAMAAAAAAAAAAgAHAAMAAAAAAAAAAgAHAAQAAAAAAAAAAgAHAAUAAAAAAAAAAgAHAAYAAAAAAAAAAgAHAAcAAAAAAAAAAgAHAAgAAAAAAAAAAgAHAAkAAAAAAAAAAgAHAAoAAAAAAAAAAgAHAAsAAAAAAAAAAwAIAAsAAAAAAAAAAwAIAAoAAAAAAAAAAgAIAAkAAAAAAAAAAgAIAAgAAAAAAAAAAgAIAAcAAAAAAAAAAgAIAAYAAAAAAAAAAgAIAAUAAAAAAAAAAgAIAAQAAAAAAAAAAgAJAAQAAAAAAAAAAgAJAAUAAAAAAAAAAgAJAAYAAAAAAAAAAgAJAAcAAAAAAAAAAgAJAAgAAAAAAAAAAgAJAAkAAAAAAAAAAgAJAAoAAAAAAAAAAgAJAAsAAAAAAAAAAwAKAAsAAAAAAAAAAwAKAAoAAAAAAAAAAgAKAAkAAAAAAAAAAgAKAAgAAAAAAAAAAgALAAgAAAAAAAAAAgALAAcAAAAAAAAAAgALAAYAAAAAAAAAAgALAAUAAAAAAAAAAgALAAQAAAAAAAAAAgALAAMAAAAAAAAAAgAMAAMAAAAAAAAAAgAMAAQAAAAAAAAAAgAMAAUAAAAAAAAAAgAMAAYAAAAAAAAAAgAMAAcAAAAAAAAAAgAMAAgAAAAAAAAAAgAMAAkAAAAAAAAAAgALAAkAAAAAAAAAAgALAAoAAAAAAAAAAgALAAsAAAAAAAAAAwAMAAsAAAAAAAAAAwAMAAoAAAAAAAAAAgANAAoAAAAAAAAAAgANAAkAAAAAAAAAAgANAAgAAAAAAAAAAgANAAcAAAAAAAAAAgANAAYAAAAAAAAAAgANAAUAAAAAAAAAAgANAAQAAAAAAAAAAgANAAMAAAAAAAAAAgAOAAMAAAAAAAAAAwAOAAQAAAAAAAAAAwAOAAUAAAAAAAAAAwAOAAYAAAAAAAAAAwAOAAcAAAAAAAAAAwAOAAgAAAAAAAAAAwAOAAkAAAAAAAAAAwAOAAoAAAAAAAAAAwAOAAsAAAAAAAAAAwANAAsAAAAAAAAAAwAHAAEAAAAAAAAAAwAIAAEAAAAAAAAAAwAJAAEAAAAAAAAAAwAKAAEAAAAAAAAAAwALAAEAAAAAAAAAAwAMAAEAAAAAAAAAAwANAAEAAAAAAAAAAwAOAAEAAAAAAAAAAwD4//3/AAAAAAAAAQD3//z/AAAAAAAAAgD3//3/AAAAAAAAAgD3//7/AAAAAAAAAgD4//7/AAAAAAAAAgD5//7/AAAAAAAAAgD5//3/AAAAAAAAAgD5//z/AAAAAAAAAgD4//z/AAAAAAAAAgA=")
+tile_set = SubResource("TileSet_6jkpc")
+script = ExtResource("5_heb0d")
+
+[node name="PropogationTimer" type="Timer" parent="World"]
+wait_time = 0.1
+autostart = true
+
+[node name="Highlights" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAQABAAAAAAAAAAAAAQACAAAAAAAAAAAAAQADAAAAAAAAAAAAAQACAAEAAAAAAAAAAQACAAIAAAAAAAAAAQACAAMAAAAAAAAAAgABAAEAAAAAAAAAAgAAAAIAAAAAAAAAAgABAAMAAAAAAAAAAgADAAIAAAAAAAAAAwADAAEAAAAAAAAAAwADAAMAAAAAAAAAAwA=")
+tile_set = SubResource("TileSet_px2os")
+script = ExtResource("9_rfqvo")
+
+[connection signal="timeout" from="World/PropogationTimer" to="World" method="_on_propogation_timer_timeout"]

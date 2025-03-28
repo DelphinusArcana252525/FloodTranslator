@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4mjkgwmlfn7s"]
+
+[ext_resource type="PackedScene" uid="uid://xlcn1o2386tt" path="res://scenes/tiles/HighlightTile.tscn" id="1_biil4"]
+
+[node name="BlueHighlight" instance=ExtResource("1_biil4")]
+
+[node name="ColorRect" parent="." index="0"]
+color = Color(0, 0, 1, 0.392157)

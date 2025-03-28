@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://btb756p5gm6or"]
+
+[ext_resource type="PackedScene" uid="uid://dygpjvev4nw8v" path="res://scenes/tiles/color_tile.tscn" id="1_87ryc"]
+
+[node name="Blue_Tile" instance=ExtResource("1_87ryc")]
+
+[node name="ColorRect" parent="." index="0"]
+color = Color(0, 0, 1, 1)

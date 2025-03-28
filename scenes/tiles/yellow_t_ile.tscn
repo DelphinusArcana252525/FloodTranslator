@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1njvaxqiag2e"]
+
+[ext_resource type="PackedScene" uid="uid://dygpjvev4nw8v" path="res://scenes/tiles/color_tile.tscn" id="1_xnb3o"]
+
+[node name="YellowTIle" instance=ExtResource("1_xnb3o")]
+
+[node name="ColorRect" parent="." index="0"]
+color = Color(1, 1, 0, 1)
