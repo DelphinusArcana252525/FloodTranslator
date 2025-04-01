@@ -4,7 +4,7 @@ const red_tile = 1
 const yellow_tile = 2
 const blue_tile = 3
 var current_color = yellow_tile
-var tile_poses: Array[Vector2i] = [Vector2i(0,0), Vector2i(0,1), Vector2i(1,1), Vector2i(1,2)]
+var tile_poses: Array[Vector2i] = [Vector2i(0,0), Vector2i(0,1), Vector2i(1,1), Vector2i(1,2), Vector2i(-1,-1)]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b77av0tltad0m"]
 
-[ext_resource type="PackedScene" uid="uid://xlcn1o2386tt" path="res://scenes/tiles/HighlightTile.tscn" id="1_0gds6"]
+[ext_resource type="PackedScene" uid="uid://xlcn1o2386tt" path="res://scenes/tiles/highlights/HighlightTile.tscn" id="1_0gds6"]
 
 [node name="RedHighlight" instance=ExtResource("1_0gds6")]
 
