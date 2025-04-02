@@ -1,0 +1,27 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://116r8e174q5g"]
+
+[ext_resource type="Texture2D" uid="uid://fmjb1bs2ove2" path="res://scenes/wordShapes.png" id="1_5j15f"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mvdyw"]
+texture = ExtResource("1_5j15f")
+texture_region_size = Vector2i(4, 4)
+0:0/next_alternative_id = 2
+0:0/0 = 0
+2:0/0 = 0
+1:0/0 = 0
+3:0/0 = 0
+3:1/0 = 0
+2:1/0 = 0
+1:1/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+3:3/0 = 0
+2:3/0 = 0
+1:3/0 = 0
+
+[resource]
+tile_size = Vector2i(4, 4)
+sources/0 = SubResource("TileSetAtlasSource_mvdyw")
