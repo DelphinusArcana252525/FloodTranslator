@@ -3,14 +3,16 @@ extends Node2D
 
 const tile_size = 32
 var shape_index: int = 0
-var shapes = [[Vector2i(0,0), Vector2i(0,1), Vector2i(1,1), Vector2i(1,2), Vector2i(-1,-1)],
-[Vector2i(-1,-1),Vector2i(-1,0),Vector2i(-1,1),Vector2i(0,1),Vector2i(1,1),Vector2i(1,0),Vector2i(1,-1),Vector2i(0,-1)],
-[Vector2i(-2,0),Vector2i(-1,0),Vector2i(0,0),Vector2i(1,0),Vector2i(2,0)]]
+var shapes #= [[Vector2i(0,0), Vector2i(0,1), Vector2i(1,1), Vector2i(1,2), Vector2i(-1,-1)],
+#[Vector2i(-1,-1),Vector2i(-1,0),Vector2i(-1,1),Vector2i(0,1),Vector2i(1,1),Vector2i(1,0),Vector2i(1,-1),Vector2i(0,-1)],
+#[Vector2i(-2,0),Vector2i(-1,0),Vector2i(0,0),Vector2i(1,0),Vector2i(2,0)]]
 var colors = [2,3,4]
 var current_color_index = 0
+@export var shapes_resource: Resource
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	shapes = shapes_resource.shapes
 	$Map.propogate_all()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
