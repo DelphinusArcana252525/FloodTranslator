@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://m0mtbw3e76x7"]
+
+[ext_resource type="Script" path="res://scenes/flood/Levels/level_0_shapes.gd" id="1_omd0r"]
+
+[resource]
+resource_name = "level_0_shapes"
+script = ExtResource("1_omd0r")

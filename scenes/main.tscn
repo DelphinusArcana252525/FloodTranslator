@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://c7c4e2mi4rwrs"]
+[gd_scene load_steps=3 format=3 uid="uid://c7c4e2mi4rwrs"]
+
+[ext_resource type="PackedScene" uid="uid://bgx5bkx1i5st2" path="res://scenes/Tutorial/tutorial_main.tscn" id="1_grbnq"]
+[ext_resource type="PackedScene" uid="uid://dmd8xmndeagiu" path="res://scenes/flood/flood_main.tscn" id="1_ovg8u"]
 
 [node name="Main" type="Node2D"]
+
+[node name="FloodMain" parent="." instance=ExtResource("1_ovg8u")]
+
+[node name="tutorial_main" parent="." instance=ExtResource("1_grbnq")]

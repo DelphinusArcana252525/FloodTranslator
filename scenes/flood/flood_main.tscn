@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmd8xmndeagiu"]
+
+[ext_resource type="Script" path="res://scenes/flood/flood_main.gd" id="1_een40"]
+[ext_resource type="PackedScene" uid="uid://bd6bppary2xam" path="res://scenes/flood/Levels/flood_level_0.tscn" id="2_pxexs"]
+
+[node name="FloodMain" type="Node2D"]
+script = ExtResource("1_een40")
+
+[node name="Flood_Level_0" parent="." instance=ExtResource("2_pxexs")]
+
+[connection signal="has_won" from="Flood_Level_0" to="." method="_on_flood_level_0_has_won"]

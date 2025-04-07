@@ -1,0 +1,78 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxbipoxu0828r"]
+
+[ext_resource type="Script" path="res://scenes/Tutorial/tutorial_screen.gd" id="1_0irth"]
+[ext_resource type="Script" path="res://scenes/Tutorial/block_and_shade.gd" id="1_yunkb"]
+[ext_resource type="Script" path="res://scenes/Tutorial/label.gd" id="2_pft23"]
+
+[node name="TutorialScreen" type="Node2D"]
+script = ExtResource("1_0irth")
+open_rect_pos = Vector2i(10, 10)
+open_rect_size = Vector2i(200, 100)
+text_rect_pos = Vector2i(500, 400)
+text_rect_size = Vector2i(300, 200)
+
+[node name="Block_and_shade" type="Node2D" parent="."]
+script = ExtResource("1_yunkb")
+
+[node name="Top_left_corner" type="Node2D" parent="Block_and_shade"]
+position = Vector2(328, 64)
+
+[node name="Bottom_right_corner" type="Node2D" parent="Block_and_shade"]
+position = Vector2(480, 416)
+
+[node name="Top_left_rect" type="ColorRect" parent="Block_and_shade"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 0.376471)
+
+[node name="Top_right_rect" type="ColorRect" parent="Block_and_shade"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 0.376471)
+
+[node name="Bottom_right_rect" type="ColorRect" parent="Block_and_shade"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 0.376471)
+
+[node name="Bottom_left_rect" type="ColorRect" parent="Block_and_shade"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 0.376471)
+
+[node name="Label" type="ColorRect" parent="."]
+offset_left = 368.0
+offset_top = 264.0
+offset_right = 808.0
+offset_bottom = 424.0
+script = ExtResource("2_pft23")
+
+[node name="Text" type="Label" parent="Label"]
+layout_mode = 0
+offset_left = -32.0
+offset_top = -128.0
+offset_right = 354.0
+offset_bottom = -86.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "blah blah blah stuff is here"
+autowrap_mode = 3
+
+[node name="Next_button" type="Button" parent="Label"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 120.0
+offset_right = 61.0
+offset_bottom = 151.0
+text = "Next"
+
+[node name="Back_button" type="Button" parent="Label"]
+layout_mode = 0
+offset_left = -232.0
+offset_top = -24.0
+offset_right = -187.0
+offset_bottom = 7.0
+text = "Back"
+
+[connection signal="pressed" from="Label/Next_button" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="Label/Back_button" to="." method="_on_back_button_pressed"]

@@ -3,14 +3,17 @@ extends Node2D
 
 const tile_size = 32
 var shape_index: int = 0
-var shapes = [[Vector2i(0,0), Vector2i(0,1), Vector2i(1,1), Vector2i(1,2), Vector2i(-1,-1)],
-[Vector2i(-1,-1),Vector2i(-1,0),Vector2i(-1,1),Vector2i(0,1),Vector2i(1,1),Vector2i(1,0),Vector2i(1,-1),Vector2i(0,-1)],
-[Vector2i(-2,0),Vector2i(-1,0),Vector2i(0,0),Vector2i(1,0),Vector2i(2,0)]]
+var shapes #= [[Vector2i(0,0), Vector2i(0,1), Vector2i(1,1), Vector2i(1,2), Vector2i(-1,-1)],
+#[Vector2i(-1,-1),Vector2i(-1,0),Vector2i(-1,1),Vector2i(0,1),Vector2i(1,1),Vector2i(1,0),Vector2i(1,-1),Vector2i(0,-1)],
+#[Vector2i(-2,0),Vector2i(-1,0),Vector2i(0,0),Vector2i(1,0),Vector2i(2,0)]]
 var colors = [2,3,4]
 var current_color_index = 0
+@export var shapes_resource: Resource
+signal has_won
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	shapes = shapes_resource.shapes
 	$Map.propogate_all()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -36,7 +39,8 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("place_shape"):
 		$Map.place_shape(shapes[shape_index], get_mouse_tile_internal(), colors[current_color_index])
 		$Map.propogate_all()
-		print($Map.has_won())
+		if ($Map.has_won()) :
+			has_won.emit()
 
 
 func get_mouse_tile_internal () -> Vector2i :
