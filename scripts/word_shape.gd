@@ -96,8 +96,8 @@ func _input(event: InputEvent):
 		
 func move_Tile():
 	var mouse_pos = get_viewport().get_mouse_position()
-	self.position.x = int(mouse_pos.x / 32) * 32
-	self.position.y = int(mouse_pos.y / 32) * 32
+	self.position.x = int(mouse_pos.x / size) * size
+	self.position.y = int(mouse_pos.y / size) * size
 	if(not isDocked and Input.is_action_just_pressed("rotate")):
 		$shape_sprite.rotate(PI/2)
 

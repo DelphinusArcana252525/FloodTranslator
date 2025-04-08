@@ -11,7 +11,7 @@ script = ExtResource("1_8ltop")
 [node name="Background" type="ColorRect" parent="."]
 offset_right = 1152.0
 offset_bottom = 640.0
-color = Color(0.301961, 0.301961, 0.301961, 1)
+color = Color(0.103521, 0.193456, 0.171356, 1)
 
 [node name="shapes_dock" parent="." instance=ExtResource("4_svbog")]
 
@@ -41,6 +41,30 @@ offset_top = 32.0
 offset_right = 149.0
 offset_bottom = 90.0
 text = "exit"
+
+[node name="instructions" type="Label" parent="."]
+offset_left = 41.0
+offset_top = 113.0
+offset_right = 342.0
+offset_bottom = 578.0
+text = "welcome to the translator. to create
+the shape pictured in blue, you must
+enter a logical English sentence
+into the indicated text box. To find
+this sentence, you can solve the
+puzzle below by filling the blue shape
+using the orange shapes below. 
+However, word order, conjugation, 
+and specific word choice are ultimately
+up to you.
+For example, if the shapes indicate
+\"1st person pronoun\" and \"to run,\" a
+valid sentence would be \"I run.\" 
+THERE CAN BE MULTIPLE VALID 
+SENTENCES FOR ONE PUZZLE, BUT
+ONLY ONE CORRECT ANSWER.
+click on a shape to pick it up, space
+to put it down, right arrow to rotate."
 
 [connection signal="mouse_exited" from="word_shape" to="word_shape" method="_on_mouse_exited"]
 [connection signal="text_changed" from="word_box" to="." method="_on_word_box_text_changed"]

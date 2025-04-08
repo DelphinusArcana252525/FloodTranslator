@@ -9,7 +9,7 @@ size = Vector2(126, 93)
 [node name="puzzle_shape" type="Area2D"]
 position = Vector2(640, 320)
 script = ExtResource("1_0p3wq")
-translation = Array[String](["I don't think", "It goes", "I go to a place"])
+translation = Array[String](["I do not think", "It goes", "I go to a place"])
 
 [node name="puzzle_sprite" type="Sprite2D" parent="."]
 scale = Vector2(32, 32)
