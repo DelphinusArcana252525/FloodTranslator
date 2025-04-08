@@ -23,21 +23,25 @@ position = Vector2(480, 416)
 [node name="Top_left_rect" type="ColorRect" parent="Block_and_shade"]
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 color = Color(0, 0, 0, 0.376471)
 
 [node name="Top_right_rect" type="ColorRect" parent="Block_and_shade"]
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 color = Color(0, 0, 0, 0.376471)
 
 [node name="Bottom_right_rect" type="ColorRect" parent="Block_and_shade"]
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 color = Color(0, 0, 0, 0.376471)
 
 [node name="Bottom_left_rect" type="ColorRect" parent="Block_and_shade"]
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 color = Color(0, 0, 0, 0.376471)
 
 [node name="Label" type="ColorRect" parent="."]

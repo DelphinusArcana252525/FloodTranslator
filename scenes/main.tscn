@@ -7,5 +7,8 @@
 
 [node name="FloodMain" parent="." instance=ExtResource("1_ovg8u")]
 
-[node name="tutorial_main" parent="." instance=ExtResource("1_grbnq")]
-z_index = 1
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="tutorial_main" parent="CanvasLayer" instance=ExtResource("1_grbnq")]
+z_index = 50
