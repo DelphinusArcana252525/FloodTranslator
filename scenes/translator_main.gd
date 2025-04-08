@@ -5,6 +5,8 @@ var levelNum
 var wordShapes
 var currIndex
 var answer
+signal win
+signal exit
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -61,3 +63,10 @@ func setLevel(levelNum):
 #maybe each word shape has a height and width variable idk
 	
 	
+
+
+func _on_win_button_pressed() -> void:
+	win.emit()
+
+func _on_exit_button_pressed() -> void:
+	exit.emit()

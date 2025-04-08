@@ -2,6 +2,7 @@ extends TileMapLayer
 
 var source = 4
 var max_row = 5
+signal win
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -43,8 +44,14 @@ func shape_placeable (shape: PackedVector2Array, origin_tile: Vector2i, color: i
 			return false
 	return true
 
+func propogate_once() -> bool:
+	var to_return = propogate_accessibles() or propogate_wires() or activate_buttons()
+	if (has_won()):
+		win.emit()
+	return to_return
+
 func propogate_all () -> void :
-	while propogate_accessibles() or propogate_wires() or activate_buttons():
+	while propogate_once():
 		pass
 
 func propogate_accessibles () -> bool:
@@ -109,3 +116,7 @@ func open_door (tile_coords : Vector2i) -> bool:
 		return false
 	set_cell(tile_coords, source, inaccessible_coords)
 	return true
+
+
+func _on_timer_timeout() -> void:
+	propogate_once()
