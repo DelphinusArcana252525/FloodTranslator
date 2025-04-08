@@ -24,7 +24,7 @@ offset_left = 640.0
 offset_top = 32.0
 offset_right = 1120.0
 offset_bottom = 96.0
-placeholder_text = "Translation here"
+placeholder_text = "Enter your translation here (no contractions please)"
 
 [node name="Win_button" type="Button" parent="."]
 visible = false
@@ -35,10 +35,10 @@ offset_bottom = 191.0
 text = "win"
 
 [node name="exit_button" type="Button" parent="."]
-offset_left = 36.0
-offset_top = 86.0
-offset_right = 165.0
-offset_bottom = 144.0
+offset_left = 20.0
+offset_top = 32.0
+offset_right = 149.0
+offset_bottom = 90.0
 text = "exit"
 
 [connection signal="mouse_exited" from="word_shape" to="word_shape" method="_on_mouse_exited"]

@@ -46,7 +46,8 @@ func setLevel(levelNum):
 		wordShapes[2].set_tile_num(8)
 		wordShapes[2]._get_tile(8)
 	
-		wordShapes[3].hide()
+		wordShapes[3].set_tile_num(9)
+		wordShapes[3]._get_tile(9)
 	
 		wordShapes[4].hide()
 	
@@ -54,11 +55,16 @@ func setLevel(levelNum):
 		
 	if(levelNum == 1):
 		print("lol its not done yet")
+		answer = "It goes"
+		
+		
+		#create the wordShapes
 		
 		
 		
 	if(levelNum == 2):
 		print("lol its not done yet")
+		answer = "I go to a place"
 	
 	
 #puzzle shape on tilemap? then maybe can check if mouse_pos
@@ -71,8 +77,8 @@ func setLevel(levelNum):
 	
 
 
-func _on_win_button_pressed() -> void:
-	win.emit()
+#func _on_win_button_pressed() -> void:
+	#win.emit()
 
 func _on_exit_button_pressed() -> void:
 	exit.emit()
