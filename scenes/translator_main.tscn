@@ -1,3 +1,24 @@
-[gd_scene format=3 uid="uid://bjy8lfyjbh7nd"]
+[gd_scene load_steps=5 format=3 uid="uid://bjy8lfyjbh7nd"]
+
+[ext_resource type="Script" path="res://scenes/translator_main.gd" id="1_8ltop"]
+[ext_resource type="PackedScene" uid="uid://dn6t7vhy7fu0c" path="res://scenes/word_shape.tscn" id="1_hqhq0"]
+[ext_resource type="PackedScene" uid="uid://qlr1ccpowd0g" path="res://puzzle_shape.tscn" id="2_qaam7"]
+[ext_resource type="PackedScene" uid="uid://cxfcduk5pm2wl" path="res://shapes_dock.tscn" id="4_svbog"]
 
 [node name="translator_main" type="Node2D"]
+script = ExtResource("1_8ltop")
+
+[node name="shapes_dock" parent="." instance=ExtResource("4_svbog")]
+
+[node name="puzzle_shape" parent="." instance=ExtResource("2_qaam7")]
+
+[node name="word_shape" parent="." instance=ExtResource("1_hqhq0")]
+
+[node name="word_box" type="TextEdit" parent="."]
+offset_left = 640.0
+offset_top = 32.0
+offset_right = 1120.0
+offset_bottom = 96.0
+placeholder_text = "Translation here"
+
+[connection signal="mouse_exited" from="word_shape" to="word_shape" method="_on_mouse_exited"]

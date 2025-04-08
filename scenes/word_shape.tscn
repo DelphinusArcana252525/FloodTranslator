@@ -6,15 +6,19 @@
 [ext_resource type="PackedScene" uid="uid://cwvv714ra3d7" path="res://shapes.tscn" id="3_euix1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dpei0"]
+size = Vector2(120.5, 126)
 
 [node name="word_shape" type="Area2D"]
 script = ExtResource("1_x8ypq")
 meaning = ["to be", "to do", "to have", "to go", "to think", "transition", "2nd person pronoun", "preposition", "negative", "and/or", "1st person pronoun", "3rd person pronoun", "a place", "here/there", "to run", "animal"]
+currMeaning = "\"to be\""
 
 [node name="shape_collider" type="CollisionShape2D" parent="."]
+position = Vector2(-1.75, 1)
 shape = SubResource("RectangleShape2D_dpei0")
 
 [node name="shape_sprite" type="Sprite2D" parent="."]
+visibility_layer = 3
 scale = Vector2(32, 32)
 texture = ExtResource("3_chhhn")
 hframes = 4
@@ -23,3 +27,5 @@ frame = 1
 
 [node name="shapes" parent="." instance=ExtResource("3_euix1")]
 tile_set = ExtResource("2_t0am6")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

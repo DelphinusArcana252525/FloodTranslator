@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://qlr1ccpowd0g"]
+
+[ext_resource type="Script" path="res://puzzle_shape.gd" id="1_0p3wq"]
+[ext_resource type="Texture2D" uid="uid://h3s7i2b5yidk" path="res://scenes/tutorial_puzzles.png" id="2_4fqyu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hdm2u"]
+size = Vector2(126, 93)
+
+[node name="puzzle_shape" type="Area2D"]
+position = Vector2(640, 320)
+script = ExtResource("1_0p3wq")
+translation = Array[String](["I don't think", "It goes", "I go to a place"])
+
+[node name="puzzle_sprite" type="Sprite2D" parent="."]
+scale = Vector2(32, 32)
+texture = ExtResource("2_4fqyu")
+hframes = 2
+vframes = 4
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-31, -16.5)
+shape = SubResource("RectangleShape2D_hdm2u")
