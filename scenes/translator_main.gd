@@ -32,34 +32,33 @@ func _process(delta: float) -> void:
 		
 	
 func setLevel(levelNum):
+	if(levelNum == 0):
+		answer = "I do not think"
+		$word_shape.set_curr_tile(true)
+		#puzzle:
+		$puzzle_shape/puzzle_sprite.frame = levelNum
+		wordShapes[0].set_tile_num(10)
+		wordShapes[0]._get_tile(10)
 	
-	answer = "I do not think"
+		wordShapes[1].set_tile_num(4)
+		wordShapes[1]._get_tile(4)
 	
+		wordShapes[2].set_tile_num(8)
+		wordShapes[2]._get_tile(8)
 	
+		wordShapes[3].hide()
 	
-	$word_shape.set_curr_tile(true)
-	#puzzle:
-	$puzzle_shape/puzzle_sprite.frame = levelNum
-	wordShapes[0].set_tile_num(10)
-	wordShapes[0]._get_tile(10)
+		wordShapes[4].hide()
 	
-	wordShapes[1].set_tile_num(4)
-	wordShapes[1]._get_tile(4)
-	
-	wordShapes[2].set_tile_num(8)
-	wordShapes[2]._get_tile(8)
-	
-	wordShapes[3].hide()
-	
-	wordShapes[4].hide()
-	
-	wordShapes[5].hide()
-	
-	
-	
-	
-	
-	pass
+		wordShapes[5].hide()
+		
+	if(levelNum == 1):
+		print("lol its not done yet")
+		
+		
+		
+	if(levelNum == 2):
+		print("lol its not done yet")
 	
 	
 #puzzle shape on tilemap? then maybe can check if mouse_pos
