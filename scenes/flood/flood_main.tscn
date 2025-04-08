@@ -1,14 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://dmd8xmndeagiu"]
+[gd_scene load_steps=4 format=3 uid="uid://dmd8xmndeagiu"]
 
 [ext_resource type="Script" path="res://scenes/flood/flood_main.gd" id="1_een40"]
 [ext_resource type="PackedScene" uid="uid://bd6bppary2xam" path="res://scenes/flood/Levels/flood_level_0.tscn" id="2_pxexs"]
+[ext_resource type="PackedScene" uid="uid://byma6dv3fuqvs" path="res://scenes/flood/Levels/flood_level_1.tscn" id="3_7db12"]
 
 [node name="FloodMain" type="Node2D"]
 script = ExtResource("1_een40")
 
 [node name="Flood_Level_0" parent="." instance=ExtResource("2_pxexs")]
 
-[node name="Level_0_Next" type="Button" parent="."]
+[node name="Next_Button" type="Button" parent="."]
 visible = false
 offset_left = 120.0
 offset_top = 184.0
@@ -17,5 +18,8 @@ offset_bottom = 472.0
 theme_override_font_sizes/font_size = 100
 text = "You won! Next level"
 
+[node name="flood_level_1" parent="." instance=ExtResource("3_7db12")]
+visible = false
+
 [connection signal="has_won" from="Flood_Level_0" to="." method="_on_flood_level_0_has_won"]
-[connection signal="pressed" from="Level_0_Next" to="." method="_on_level_0_next_pressed"]
+[connection signal="pressed" from="Next_Button" to="." method="_on_level_0_next_pressed"]

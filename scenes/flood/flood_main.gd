@@ -1,5 +1,7 @@
 extends Node2D
 
+var flood_scenes = [preload("res://scenes/flood/Levels/flood_level_0.tscn"), preload("res://scenes/flood/Levels/flood_level_1.tscn")]
+var scene_index
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,3 +17,4 @@ func _on_flood_level_0_has_won() -> void:
 func _on_level_0_next_pressed() -> void:
 	$Level_0_Next.hide()
 	$Flood_Level_0.hide()
+	$flood_level_1.show()

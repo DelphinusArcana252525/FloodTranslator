@@ -13,7 +13,7 @@ signal has_won
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print("hello")
+	#print("hello")
 	shapes = []
 	$Map.propogate_all()
 
@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 	#print(shapes[shape_index])
 	if shapes.size() > 0:
 		$Highlight_Layer.display_shape(shapes[shape_index], get_mouse_tile_internal(), colors[current_color_index])
-	print(shapes)
+	#print(shapes)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("space"):
@@ -56,6 +56,9 @@ static func get_mouse_tile (viewport: Viewport, tile_width: int, tile_height: in
 	var mouse_y = floori(mouse_pos.y / tile_height)
 	return Vector2i(mouse_x, mouse_y)
 
-
 func _on_map_win() -> void:
 	has_won.emit()
+
+
+func _on_reset_button_pressed() -> void:
+	get_tree().reload_current_scene()
