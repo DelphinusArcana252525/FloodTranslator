@@ -11,7 +11,7 @@ signal exit
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	wordShapes = [$word_shape, $shapes_dock/word_shape, $shapes_dock/word_shape2, $shapes_dock/word_shape3, $shapes_dock/word_shape4, $shapes_dock/word_shape5]
-	levelNum = 0
+	levelNum = 2
 	setLevel(levelNum)
 	currIndex = 0
 	pass # Replace with function body.
@@ -32,11 +32,13 @@ func _process(delta: float) -> void:
 		
 	
 func setLevel(levelNum):
+	$puzzle_shape/puzzle_sprite.frame = levelNum
+	answer = $puzzle_shape.translation[levelNum]
 	if(levelNum == 0):
-		answer = "I do not think"
+		#answer = "I do not think"
 		$word_shape.set_curr_tile(true)
 		#puzzle:
-		$puzzle_shape/puzzle_sprite.frame = levelNum
+		
 		wordShapes[0].set_tile_num(10)
 		wordShapes[0]._get_tile(10)
 	
@@ -55,7 +57,25 @@ func setLevel(levelNum):
 		
 	if(levelNum == 1):
 		print("lol its not done yet")
-		answer = "It goes"
+		#answer = "It goes"
+		$word_shape.set_curr_tile(true)
+		
+		#$puzzle_shape/puzzle_sprite.frame = levelNum
+		
+		wordShapes[0].set_tile_num(6)
+		wordShapes[0]._get_tile(6)
+		
+		wordShapes[3].set_tile_num(3)
+		wordShapes[3]._get_tile(3)
+		
+		wordShapes[2].set_tile_num(11)
+		wordShapes[2]._get_tile(11)
+		
+		wordShapes[4].hide()
+	
+		wordShapes[5].hide()
+		
+		wordShapes[1].hide()
 		
 		
 		#create the wordShapes
@@ -64,7 +84,27 @@ func setLevel(levelNum):
 		
 	if(levelNum == 2):
 		print("lol its not done yet")
-		answer = "I go to a place"
+		
+		$word_shape.set_curr_tile(true)
+		
+		wordShapes[0].set_tile_num(3)
+		wordShapes[0]._get_tile(3)
+		
+		wordShapes[1].set_tile_num(10)
+		wordShapes[1]._get_tile(10)
+		
+		wordShapes[2].set_tile_num(14)
+		wordShapes[2]._get_tile(14)
+		
+		wordShapes[3].set_tile_num(12)
+		wordShapes[3]._get_tile(12)
+		
+		wordShapes[5].set_tile_num(7)
+		wordShapes[5]._get_tile(7)
+		
+		wordShapes[4].hide()
+		
+		#answer = "I go to a place"
 	
 	
 #puzzle shape on tilemap? then maybe can check if mouse_pos
