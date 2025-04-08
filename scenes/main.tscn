@@ -8,3 +8,4 @@
 [node name="FloodMain" parent="." instance=ExtResource("1_ovg8u")]
 
 [node name="tutorial_main" parent="." instance=ExtResource("1_grbnq")]
+z_index = 1

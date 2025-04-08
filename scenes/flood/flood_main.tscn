@@ -8,4 +8,14 @@ script = ExtResource("1_een40")
 
 [node name="Flood_Level_0" parent="." instance=ExtResource("2_pxexs")]
 
+[node name="Level_0_Next" type="Button" parent="."]
+visible = false
+offset_left = 120.0
+offset_top = 184.0
+offset_right = 1078.0
+offset_bottom = 472.0
+theme_override_font_sizes/font_size = 100
+text = "You won! Next level"
+
 [connection signal="has_won" from="Flood_Level_0" to="." method="_on_flood_level_0_has_won"]
+[connection signal="pressed" from="Level_0_Next" to="." method="_on_level_0_next_pressed"]
