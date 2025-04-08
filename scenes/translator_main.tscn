@@ -27,6 +27,7 @@ offset_bottom = 96.0
 placeholder_text = "Translation here"
 
 [node name="Win_button" type="Button" parent="."]
+visible = false
 offset_left = 936.0
 offset_top = 160.0
 offset_right = 972.0
@@ -34,12 +35,13 @@ offset_bottom = 191.0
 text = "win"
 
 [node name="exit_button" type="Button" parent="."]
-offset_left = 1008.0
-offset_top = 168.0
-offset_right = 1045.0
-offset_bottom = 199.0
+offset_left = 36.0
+offset_top = 86.0
+offset_right = 165.0
+offset_bottom = 144.0
 text = "exit"
 
 [connection signal="mouse_exited" from="word_shape" to="word_shape" method="_on_mouse_exited"]
+[connection signal="text_changed" from="word_box" to="." method="_on_word_box_text_changed"]
 [connection signal="pressed" from="Win_button" to="." method="_on_win_button_pressed"]
 [connection signal="pressed" from="exit_button" to="." method="_on_exit_button_pressed"]

@@ -24,29 +24,36 @@ func _process(delta: float) -> void:
 		var mouse_pos = get_viewport().get_mouse_position()
 		for i in range(0, len(wordShapes)):
 			if (abs(wordShapes[i].position.x - mouse_pos.x) < 64 and abs(wordShapes[i].position.y - mouse_pos.y) < 64):
-				wordShapes[currIndex].set_curr_tile(false)
-				wordShapes[i].set_curr_tile(true)
-				currIndex = i
+				if(not wordShapes[currIndex].isHidden):
+					wordShapes[currIndex].set_curr_tile(false)
+					wordShapes[i].set_curr_tile(true)
+					currIndex = i
 			
 		
 	
 func setLevel(levelNum):
 	
 	answer = "I do not think"
+	
+	
+	
 	$word_shape.set_curr_tile(true)
 	#puzzle:
 	$puzzle_shape/puzzle_sprite.frame = levelNum
 	wordShapes[0].set_tile_num(10)
 	wordShapes[0]._get_tile(10)
 	
-	wordShapes[1].set_tile_num(10)
-	wordShapes[1]._get_tile(10)
+	wordShapes[1].set_tile_num(4)
+	wordShapes[1]._get_tile(4)
 	
 	wordShapes[2].set_tile_num(8)
 	wordShapes[2]._get_tile(8)
 	
-	wordShapes[3].set_tile_num(4)
-	wordShapes[3]._get_tile(4)
+	wordShapes[3].hide()
+	
+	wordShapes[4].hide()
+	
+	wordShapes[5].hide()
 	
 	
 	
@@ -70,3 +77,10 @@ func _on_win_button_pressed() -> void:
 
 func _on_exit_button_pressed() -> void:
 	exit.emit()
+
+
+func _on_word_box_text_changed() -> void:
+	if($word_box.text.to_lower() == (answer.to_lower())):
+		win.emit()
+		print("good job joe")
+	pass # Replace with function body.

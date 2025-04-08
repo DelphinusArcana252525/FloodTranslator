@@ -12,6 +12,7 @@ var canMove : bool = true
 var tileNum
 var setDown
 var mouseInShape
+var isHidden
 
 var isCurrTile
 #gonna have a resource? list of resources?
@@ -19,21 +20,27 @@ var isCurrTile
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	isHidden = false
 	mouseInShape = false
 	setDown = false
 	tileNum = 9
-	pass # Replace with function body.
+	 # Replace with function body.
 	_get_tile(tileNum)
 	print(currMeaning)
+	$Label.text = currMeaning
 	
 	#$shape_sprite = 
 
 func set_curr_tile(boolean):
 	isCurrTile = boolean
+	isDocked = not boolean
+	setDown = not boolean
 
 func _get_tile(num):
 	$shape_sprite.frame = num
 	currMeaning = meaning[num]
+	$Label.text = currMeaning
+	#$Label.text = currMeaning
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -46,10 +53,19 @@ func _process(delta: float) -> void:
 #get input from player - r rotate, follow mouse, click
 
 func _can_move():
-	if(isDocked or setDown or not isCurrTile):
+	if(isDocked or setDown or not isCurrTile or isHidden):
 		return false
 	return true
 	
+	
+func hide_shape():
+	$shape_sprite.hide()
+	isHidden = true
+	
+	
+func show_shape():
+	$shape_sprite.show()
+	isHidden = false
 
 func _input(event: InputEvent):
 	if(setDown):
@@ -67,7 +83,7 @@ func _input(event: InputEvent):
 				#instance.set_tile_num(tileNum)
 				#instance._get_tile(tileNum)
 				#add_child(instance)
-				print("new wordshape scene")
+				print("clicked")
 		if(not isDocked and mouseInShape and Input.is_action_just_pressed("delete_shape")):
 			pass
 			#$shape_sprite.hide()
