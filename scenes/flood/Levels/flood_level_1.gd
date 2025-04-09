@@ -18,10 +18,10 @@ func _process(delta: float) -> void:
 
 func _on_translate_button_pressed() -> void:
 	translate_node = translate_scene.instantiate()
-	translate_node.setLevel(2)
 	translate_node.win.connect(_on_translate_win)
 	translate_node.exit.connect(_on_translate_exit)
 	add_child(translate_node)
+	translate_node.setLevel(2)
 
 func _on_translate_win () -> void:
 	translate_node.queue_free()

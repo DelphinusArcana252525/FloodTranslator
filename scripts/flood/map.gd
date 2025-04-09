@@ -11,6 +11,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	#print(has_won())
 	pass
 
 const accessible_col = 0
@@ -45,7 +46,11 @@ func shape_placeable (shape: PackedVector2Array, origin_tile: Vector2i, color: i
 	return true
 
 func propogate_once() -> bool:
-	var to_return = propogate_accessibles() or propogate_wires() or activate_buttons()
+	var to_return = propogate_accessibles()
+	if propogate_wires():
+		to_return = true
+	if activate_buttons():
+		to_return = true
 	if (has_won()):
 		win.emit()
 	return to_return

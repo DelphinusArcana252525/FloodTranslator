@@ -94,7 +94,7 @@ func _input(event: InputEvent):
 	
 		#maybe do another thing??
 		
-func move_Tile():
+func move_Tile(): # literally the worst naming convention ever
 	var mouse_pos = get_viewport().get_mouse_position()
 	self.position.x = int(mouse_pos.x / size) * size
 	self.position.y = int(mouse_pos.y / size) * size

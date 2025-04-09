@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 	pass
 
 func update_poses () -> void:
-	var text_offset = Vector2i(20,20)
+	var text_offset = Vector2i(3,0)
 	$Text.position = text_offset
 	$Text.size = size
 	var button_height = $Next_button.size.y

@@ -3,6 +3,10 @@ extends Node2D
 var current_screen: tutorial_screen
 var screen_index: int
 var screen_scene
+var flood_text_pos = Vector2i(912, 448)
+var flood_text_size = Vector2i(200,150)
+var zero = Vector2i(0,0)
+var viewport_size = Vector2i(1152, 624)
 
 class Screen:
 	var open_top_left: Vector2i
@@ -19,12 +23,32 @@ class Screen:
 		text = txt
 
 var screens: Array[Screen] = []
+var messages: Array[String] = ["Welcome to Flood Translator!",
+"To start playing, we need a shape, so click on 'translate'",
+"Follow these instructions",
+"Now, hover over the button, the little black square connected to wires",
+"To open the door (the brown square) we need to press the button. Shapes can do that for us.",
+"Hover over the button and press ‘p’ to place the shape.",
+"Congratulations!",
+"Okay, now we have a different shape. Click to translate it.",
+"Hit next when you're done with the translation.",
+"The grey tiles are ‘inaccessible’, so we can’t place shapes there.",
+"But we can still place them if the mouse is on an accessible one.",
+"Hover over the bottom row of white tiles, then press ‘p’ to place the tile.",
+"Congratulations!",
+"Be careful here. The accessible tiles can’t propagate through colored ones.",
+"Instead, we need to hit the button beyond the wall. You can press ‘s’ to change shapes.",
+"Congratulations!",
+"A word of advice: you can place red shapes on red tiles and blue shapes on blue tiles, but you can’t place red shapes on blue tiles or vice versa. ",
+"Congratulations",
+"Try this one on your own.",
+"Congratulations!"]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	screen_scene = preload("res://scenes/Tutorial/tutorial_screen.tscn")
-	screens.append(Screen.new(Vector2i(20,20), Vector2i(150,150), Vector2i(300, 400), Vector2i(300, 200), "Click the start button"))
-	screens.append(Screen.new(Vector2i(50,100), Vector2i(100,120), Vector2i(200, 500), Vector2i(400, 100), "Words words words words wrords worosd wossrodow sowodorosodow"))
+	for message in messages:
+		screens.append(Screen.new(zero, viewport_size, flood_text_pos, flood_text_size, message))
 	change_screen(0)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

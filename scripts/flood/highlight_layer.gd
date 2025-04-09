@@ -21,3 +21,6 @@ func display_shape(shape: PackedVector2Array, origin_tile: Vector2i, color: int)
 	for pos in shape:
 		var i_pos = Vector2i(pos)
 		set_cell(origin_tile + i_pos, source, Vector2i(color, color_row), transparent_alt)
+
+func clear_tiles () -> void:
+	clear()

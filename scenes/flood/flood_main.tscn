@@ -1,13 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmd8xmndeagiu"]
+[gd_scene load_steps=7 format=3 uid="uid://dmd8xmndeagiu"]
 
 [ext_resource type="Script" path="res://scenes/flood/flood_main.gd" id="1_een40"]
 [ext_resource type="PackedScene" uid="uid://bd6bppary2xam" path="res://scenes/flood/Levels/flood_level_0.tscn" id="2_pxexs"]
-[ext_resource type="PackedScene" path="res://scenes/flood/Levels/flood_level_1.tscn" id="3_7db12"]
+[ext_resource type="PackedScene" uid="uid://byma6dv3fuqvs" path="res://scenes/flood/Levels/flood_level_1.tscn" id="3_7db12"]
+[ext_resource type="PackedScene" uid="uid://dtohueqmalt7t" path="res://scenes/flood/Levels/flood_level_2.tscn" id="4_7u64e"]
+[ext_resource type="PackedScene" uid="uid://bdnfelu332e2o" path="res://scenes/flood/Levels/flood_level_3.tscn" id="5_rsxtr"]
+[ext_resource type="PackedScene" uid="uid://dfj73g6w02biv" path="res://scenes/flood/Levels/flood_level_4.tscn" id="6_cbhc3"]
 
 [node name="FloodMain" type="Node2D"]
 script = ExtResource("1_een40")
 
 [node name="Flood_Level_0" parent="." instance=ExtResource("2_pxexs")]
+
+[node name="flood_level_1" parent="." instance=ExtResource("3_7db12")]
+visible = false
+
+[node name="flood_level_2" parent="." instance=ExtResource("4_7u64e")]
+visible = false
+
+[node name="flood_level_3" parent="." instance=ExtResource("5_rsxtr")]
+visible = false
+
+[node name="flood_level_4" parent="." instance=ExtResource("6_cbhc3")]
+visible = false
 
 [node name="Next_Button" type="Button" parent="."]
 visible = false
@@ -18,8 +33,9 @@ offset_bottom = 472.0
 theme_override_font_sizes/font_size = 100
 text = "You won! Next level"
 
-[node name="flood_level_1" parent="." instance=ExtResource("3_7db12")]
-visible = false
-
 [connection signal="has_won" from="Flood_Level_0" to="." method="_on_flood_level_0_has_won"]
+[connection signal="has_won" from="flood_level_1" to="." method="_on_flood_level_1_has_won"]
+[connection signal="has_won" from="flood_level_2" to="." method="_on_flood_level_2_has_won"]
+[connection signal="has_won" from="flood_level_3" to="." method="_on_flood_level_3_has_won"]
+[connection signal="has_won" from="flood_level_4" to="." method="_on_flood_level_4_has_won"]
 [connection signal="pressed" from="Next_Button" to="." method="_on_level_0_next_pressed"]
