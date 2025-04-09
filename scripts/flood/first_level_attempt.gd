@@ -10,6 +10,7 @@ var colors = [2,3,4]
 var current_color_index = 0
 @export var shapes_resource: Resource
 signal has_won
+signal reset
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -53,8 +54,8 @@ static func get_mouse_tile (viewport: Viewport, tile_width: int, tile_height: in
 	return Vector2i(mouse_x, mouse_y)
 
 func _on_map_win() -> void:
-	print ("hi")
+	print (colors)
 	has_won.emit()
 
 func _on_reset_button_pressed() -> void:
-	get_tree().reload_current_scene()
+	reset.emit()

@@ -11,6 +11,7 @@
 script = ExtResource("1_een40")
 
 [node name="Flood_Level_0" parent="." instance=ExtResource("2_pxexs")]
+visible = false
 
 [node name="flood_level_1" parent="." instance=ExtResource("3_7db12")]
 visible = false
@@ -26,6 +27,7 @@ visible = false
 
 [node name="Next_Button" type="Button" parent="."]
 visible = false
+z_index = 10
 offset_left = 120.0
 offset_top = 184.0
 offset_right = 1078.0

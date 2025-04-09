@@ -22,6 +22,7 @@ func _on_translate_button_pressed() -> void:
 	translate_node.exit.connect(_on_translate_exit)
 	add_child(translate_node)
 	translate_node.setLevel(0)
+	$TranslateButton.hide()
 
 func _on_translate_win () -> void:
 	translate_node.queue_free()
