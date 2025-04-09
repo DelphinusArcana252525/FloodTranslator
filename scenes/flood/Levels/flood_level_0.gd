@@ -24,10 +24,11 @@ func _on_translate_button_pressed() -> void:
 	translate_node.setLevel(0)
 
 func _on_translate_win () -> void:
-	translate_node.queue_free()
 	shapes.append([Vector2i(0,0),Vector2i(-1,-1),Vector2i(-1,0),Vector2i(-1,1),
 	Vector2i(0,1),Vector2i(1,1),Vector2i(1,0),Vector2i(1,-1),Vector2i(0,-1),
 	Vector2i(2,-1),Vector2i(2,0),Vector2i(2,1)])
+	translate_node.queue_free()
+	
 
 func _on_translate_exit() -> void:
 	translate_node.queue_free()
