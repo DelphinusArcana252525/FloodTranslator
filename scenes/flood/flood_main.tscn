@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/flood/flood_main.gd" id="1_een40"]
 [ext_resource type="PackedScene" uid="uid://bd6bppary2xam" path="res://scenes/flood/Levels/flood_level_0.tscn" id="2_pxexs"]
-[ext_resource type="PackedScene" path="res://scenes/flood/Levels/flood_level_1.tscn" id="3_7db12"]
+[ext_resource type="PackedScene" uid="uid://byma6dv3fuqvs" path="res://scenes/flood/Levels/flood_level_1.tscn" id="3_7db12"]
 
 [node name="FloodMain" type="Node2D"]
 script = ExtResource("1_een40")

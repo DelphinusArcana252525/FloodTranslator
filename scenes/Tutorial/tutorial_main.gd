@@ -3,6 +3,10 @@ extends Node2D
 var current_screen: tutorial_screen
 var screen_index: int
 var screen_scene
+var flood_text_pos = Vector2i(912, 448)
+var flood_text_size = Vector2i(200,150)
+var zero = Vector2i(0,0)
+var viewport_size = Vector2i(1152, 624)
 
 class Screen:
 	var open_top_left: Vector2i
@@ -23,8 +27,7 @@ var screens: Array[Screen] = []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	screen_scene = preload("res://scenes/Tutorial/tutorial_screen.tscn")
-	screens.append(Screen.new(Vector2i(20,20), Vector2i(150,150), Vector2i(300, 400), Vector2i(300, 200), "Click the start button"))
-	screens.append(Screen.new(Vector2i(50,100), Vector2i(100,120), Vector2i(200, 500), Vector2i(400, 100), "Words words words words wrords worosd wossrodow sowodorosodow"))
+	screens.append(Screen.new(zero, viewport_size, flood_text_pos, flood_text_size, "Welcome to Flood Translator!"))
 	change_screen(0)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

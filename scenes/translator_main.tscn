@@ -16,6 +16,7 @@ color = Color(0.301961, 0.301961, 0.301961, 1)
 [node name="shapes_dock" parent="." instance=ExtResource("4_svbog")]
 
 [node name="puzzle_shape" parent="." instance=ExtResource("2_qaam7")]
+translation = Array[String](["I do not think", "It goes", "I go to a place"])
 
 [node name="word_shape" parent="." instance=ExtResource("1_hqhq0")]
 position = Vector2(0, 3)

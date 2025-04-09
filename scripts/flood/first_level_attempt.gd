@@ -20,17 +20,13 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	#print(shapes[shape_index])
-	if shapes.size() > 0:
-		$Highlight_Layer.display_shape(shapes[shape_index], get_mouse_tile_internal(), colors[current_color_index])
+	if shapes.size() > 0 and $Map.shape_placeable(shapes[shape_index], get_mouse_tile_internal(), colors[shape_index]):
+		$Highlight_Layer.display_shape(shapes[shape_index], get_mouse_tile_internal(), colors[shape_index])
+	else:
+		$Highlight_Layer.clear_tiles()
 	#print(shapes)
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("space"):
-		$Map.propogate_all()
-		#print($Map.propogate_accessibles())
-		#print($Map.activate_buttons())
-		#print($Map.propogate_wires())
-		#print("hi")
 	if event.is_action_pressed("next_color"):
 		current_color_index += 1
 		if current_color_index >= colors.size():
@@ -41,7 +37,7 @@ func _input(event: InputEvent) -> void:
 			shape_index = 0
 	if event.is_action_pressed("place_shape"):
 		if shapes.size() > 0: 
-			$Map.place_shape(shapes[shape_index], get_mouse_tile_internal(), colors[current_color_index])
+			$Map.place_shape(shapes[shape_index], get_mouse_tile_internal(), colors[shape_index])
 		#$Map.propogate_all()
 		if ($Map.has_won()) :
 			has_won.emit()

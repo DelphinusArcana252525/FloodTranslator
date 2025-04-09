@@ -12,9 +12,9 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_flood_level_0_has_won() -> void:
-	$Level_0_Next.show()
+	$Next_Button.show()
 
 func _on_level_0_next_pressed() -> void:
-	$Level_0_Next.hide()
+	$Next_Button.hide()
 	$Flood_Level_0.hide()
 	$flood_level_1.show()
