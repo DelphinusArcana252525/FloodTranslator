@@ -5,7 +5,8 @@ preload("res://scenes/flood/Levels/flood_level_1.tscn"),
 preload("res://scenes/flood/Levels/flood_level_2.tscn"),
 preload("res://scenes/flood/Levels/flood_level_3.tscn"),
 preload("res://scenes/flood/Levels/flood_level_4.tscn"),
-preload("res://scenes/flood/Levels/flood_level_5.tscn")]
+preload("res://scenes/flood/Levels/flood_level_5.tscn"),
+preload("res://scenes/flood/Levels/flood_level_6.tscn")]
 var scene_index
 var current_flood_scene
 
