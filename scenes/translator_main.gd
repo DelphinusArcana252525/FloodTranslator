@@ -11,7 +11,7 @@ signal exit
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	wordShapes = [$word_shape, $shapes_dock/word_shape, $shapes_dock/word_shape2, $shapes_dock/word_shape3, $shapes_dock/word_shape4, $shapes_dock/word_shape5]
-	levelNum = 0
+	levelNum = 2
 	setLevel(levelNum)
 	currIndex = 0
 
@@ -81,7 +81,7 @@ func setLevel(levelNum):
 		
 		
 	if(levelNum == 2):
-		
+		$instructions.hide()
 		$word_shape.set_curr_tile(true)
 		
 		wordShapes[0].set_tile_num(3)

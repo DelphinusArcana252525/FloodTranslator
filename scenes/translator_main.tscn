@@ -63,7 +63,7 @@ valid sentence would be \"I run.\"
 THERE CAN BE MULTIPLE VALID 
 SENTENCES FOR ONE PUZZLE, BUT
 ONLY ONE CORRECT ANSWER.
-click on a shape to pick it up, space
+click on a shape to pick it up, s
 to put it down, right arrow to rotate."
 
 [connection signal="mouse_exited" from="word_shape" to="word_shape" method="_on_mouse_exited"]
