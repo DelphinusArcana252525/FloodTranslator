@@ -11,7 +11,7 @@ signal exit
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	wordShapes = [$word_shape, $shapes_dock/word_shape, $shapes_dock/word_shape2, $shapes_dock/word_shape3, $shapes_dock/word_shape4, $shapes_dock/word_shape5]
-	levelNum = 0
+	levelNum = 1
 	setLevel(levelNum)
 	currIndex = 0
 	pass # Replace with function body.
@@ -37,6 +37,7 @@ func setLevel(levelNum):
 	if(levelNum == 0):
 		#answer = "I do not think"
 		$word_shape.set_curr_tile(true)
+		$instructions.show()
 		#puzzle:
 		
 		wordShapes[0].set_tile_num(10)
@@ -48,16 +49,16 @@ func setLevel(levelNum):
 		wordShapes[2].set_tile_num(8)
 		wordShapes[2]._get_tile(8)
 	
-		wordShapes[3].set_tile_num(9)
-		wordShapes[3]._get_tile(9)
+		wordShapes[5].set_tile_num(9)
+		wordShapes[5]._get_tile(9)
 	
 		wordShapes[4].hide()
 	
-		wordShapes[5].hide()
+		wordShapes[3].hide()
 		
 	if(levelNum == 1):
-		print("lol its not done yet")
 		#answer = "It goes"
+		$instructions.hide()
 		$word_shape.set_curr_tile(true)
 		
 		#$puzzle_shape/puzzle_sprite.frame = levelNum
@@ -83,7 +84,6 @@ func setLevel(levelNum):
 		
 		
 	if(levelNum == 2):
-		print("lol its not done yet")
 		
 		$word_shape.set_curr_tile(true)
 		
