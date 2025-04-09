@@ -11,12 +11,9 @@ signal exit
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	wordShapes = [$word_shape, $shapes_dock/word_shape, $shapes_dock/word_shape2, $shapes_dock/word_shape3, $shapes_dock/word_shape4, $shapes_dock/word_shape5]
-	levelNum = 1
+	levelNum = 0
 	setLevel(levelNum)
 	currIndex = 0
-	pass # Replace with function body.
-	
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

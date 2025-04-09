@@ -30,7 +30,7 @@ func update_positions () -> void:
 	$Block_and_shade/Bottom_right_corner.position = open_rect_pos + open_rect_size
 	$Label.position = text_rect_pos
 	$Label.size = text_rect_size
-	$Label/Text.size = text_rect_size
+	$Label/Text.size = text_rect_size - Vector2i(20, 20)
 	$Block_and_shade.update_rect_poses()
 	$Label.update_poses()
 

@@ -53,8 +53,8 @@ static func get_mouse_tile (viewport: Viewport, tile_width: int, tile_height: in
 	return Vector2i(mouse_x, mouse_y)
 
 func _on_map_win() -> void:
+	print ("hi")
 	has_won.emit()
-
 
 func _on_reset_button_pressed() -> void:
 	get_tree().reload_current_scene()
